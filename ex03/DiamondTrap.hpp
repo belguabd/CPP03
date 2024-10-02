@@ -1,42 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: belguabd <belguabd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/23 13:06:15 by belguabd          #+#    #+#             */
-/*   Updated: 2024/09/23 13:06:16 by belguabd         ###   ########.fr       */
+/*   Created: 2024/09/23 16:41:41 by belguabd          #+#    #+#             */
+/*   Updated: 2024/09/23 18:47:38 by belguabd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 
-#ifndef  CLAPTRAP_HPP
-#define CLAPTRAP_HPP
+#ifndef DIAMONDTRAP_HPP
+#define DIAMONDTRAP_HPP
 
 #include <iostream>
+#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
-class ClapTrap
+class DiamondTrap : public FragTrap, public ScavTrap
 {
     private:
         std::string _name;
-        unsigned int _hitPoints;
-        unsigned int _energyPoints;
-        unsigned int _attackDamage;
 
     public:
-        ClapTrap();
-        ClapTrap(std::string name);
-        ClapTrap &operator=(const ClapTrap &obj);
-        ClapTrap(const ClapTrap &obj);
-        ~ClapTrap();
-
+        DiamondTrap();
+        DiamondTrap(const DiamondTrap &obj);
+        DiamondTrap &operator=(const DiamondTrap &obj);
+        ~DiamondTrap();
+        std::string getName(){return _name;}
         
+        DiamondTrap(std::string name);
         void attack(const std::string &target);
-        void takeDamage(unsigned int amount);
-        void beRepaired(unsigned int amount);
+        void whoAmI();
 };
-
-
 #endif

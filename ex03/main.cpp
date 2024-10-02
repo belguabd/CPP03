@@ -5,24 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: belguabd <belguabd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/23 13:06:20 by belguabd          #+#    #+#             */
-/*   Updated: 2024/09/23 13:06:21 by belguabd         ###   ########.fr       */
+/*   Created: 2024/09/23 16:41:56 by belguabd          #+#    #+#             */
+/*   Updated: 2024/10/02 14:33:13 by belguabd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 
-#include "ClapTrap.hpp"
+
+#include <iostream>
+#include "DiamondTrap.hpp"
 
 int main()
 {
-    ClapTrap Trap1("Trap1");
-    ClapTrap Trap2("Trap2");
+    DiamondTrap diamondTrap1("Trap1");
+    DiamondTrap diamondTrap2("Trap2");
+    diamondTrap1.attack("Trap2");
+    diamondTrap1.takeDamage(10);
 
-    Trap1.attack("Trap2");
-    Trap2.takeDamage(30);
-
-    Trap2.attack("Trap1");
-    Trap1.takeDamage(30);
-    return 0;
+    diamondTrap1.beRepaired(2);
+    diamondTrap1.guardGate();
+    diamondTrap1.highFivesGuys();
+    diamondTrap1.whoAmI();
+    return (0);
 }

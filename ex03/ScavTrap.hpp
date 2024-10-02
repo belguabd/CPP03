@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: belguabd <belguabd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/23 13:06:20 by belguabd          #+#    #+#             */
-/*   Updated: 2024/09/23 13:06:21 by belguabd         ###   ########.fr       */
+/*   Created: 2024/09/23 16:42:05 by belguabd          #+#    #+#             */
+/*   Updated: 2024/09/23 16:42:06 by belguabd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 
+
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
+
 #include "ClapTrap.hpp"
 
-int main()
+class ScavTrap :virtual public ClapTrap
 {
-    ClapTrap Trap1("Trap1");
-    ClapTrap Trap2("Trap2");
+public:
+    ScavTrap();
+    ScavTrap(const ScavTrap &obj);
+    ScavTrap &operator=(const ScavTrap &obj);
+    ~ScavTrap();
 
-    Trap1.attack("Trap2");
-    Trap2.takeDamage(30);
-
-    Trap2.attack("Trap1");
-    Trap1.takeDamage(30);
-    return 0;
-}
+    ScavTrap(std::string name);
+    void attack(const std::string &target);
+    void guardGate();
+};
+#endif

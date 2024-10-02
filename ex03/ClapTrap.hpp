@@ -6,7 +6,7 @@
 /*   By: belguabd <belguabd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 13:06:15 by belguabd          #+#    #+#             */
-/*   Updated: 2024/09/23 13:06:16 by belguabd         ###   ########.fr       */
+/*   Updated: 2024/09/23 13:52:54 by belguabd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 class ClapTrap
 {
-    private:
+    protected:
         std::string _name;
         unsigned int _hitPoints;
         unsigned int _energyPoints;
